@@ -2,18 +2,20 @@ $(() => {
 
 
     //Script para desativar o botão de submit se o textarea estiver vazio
+    //       para ativar o botao de submit se o file tiver conteúdo
+    //       para desativar o botão de submit se o textarea estiver vazio e se o src do elemento img for "IMG/erro.png"
+
     $("#btn").attr("disabled", true);
+
     $("#tweet").keyup(function() {
 
-        if($("#tweet").val().trim() === ''){
-            $("#btn").attr("disabled", true);
-        }else{
+        if($("#tweet").val().trim() !== ''|| $("#file2").val() && $("#img").attr('src') !== "IMG/error.png"){
             $("#btn").attr("disabled", false);
+        }else if($("#tweet").val().trim() === ''){
+            $("#btn").attr("disabled", true);
         }
 
     });
-
-
 
     //Script para desativar o botao de submit se o input estiver vazio
     $("#file2").change(function() {
@@ -57,8 +59,8 @@ $(() => {
                                                                  //4SVaRXhpZgAAS ..... . ")
 
 
-                        reader.onload = function (e) { // On load é acionado quando uma leitura é concluída com êxito.
-                        // Quando a leitura é realizada
+                        reader.onload = function (e) { //On load é acionado quando uma leitura é concluída com êxito.
+                                                                             //Quando a leitura é realizada
                         $('#img').attr('src', e.target.result);              //O atributo src do elemento img recebe a URL
                                                                              //da imagem gerado pelo o objeto FileReader
                                                                              //(ex: data:image/png;base64,iVBORw0KGgo.......)
