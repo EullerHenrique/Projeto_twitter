@@ -22,6 +22,5 @@
 
 
 ##### QUEM SEGUIR
-![screencapture-the-twitter-rf-gd-quem-seguir-2020-04-13-23_21_51](https://user-images.githubusercontent.com/48317736/79185841-6cd7ec80-7dee-11ea-8610-59c3d3517fe2.png)
-
+![screencapture-the-twitter-rf-gd-quem-seguir-2020-04-14-01_18_52](https://user-images.githubusercontent.com/48317736/79185880-837e4380-7dee-11ea-9406-b1099b7688e4.png)
 
