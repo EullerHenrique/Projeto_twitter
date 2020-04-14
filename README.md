@@ -19,9 +19,8 @@
 
 
 ## TIMELINE
-![screencapture-the-twitter-rf-gd-timeline-2020-04-14-01_25_43](https://user-images.githubusercontent.com/48317736/79186020-e1ab2680-7dee-11ea-92f4-ef47c1b62e15.png)
+![the-twitter rf gd_timeline (6)](https://user-images.githubusercontent.com/48317736/79187194-0c4aae80-7df2-11ea-8a3a-144790bbeaf1.png)
 
 
 ## QUEM SEGUIR
 ![screencapture-the-twitter-rf-gd-quem-seguir-2020-04-14-01_18_52](https://user-images.githubusercontent.com/48317736/79185880-837e4380-7dee-11ea-9406-b1099b7688e4.png)
-
