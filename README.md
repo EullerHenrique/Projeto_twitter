@@ -19,6 +19,7 @@
 
 
 ## TIMELINE
+![screencapture-the-twitter-rf-gd-timeline-2020-04-14-01_25_43](https://user-images.githubusercontent.com/48317736/79186020-e1ab2680-7dee-11ea-92f4-ef47c1b62e15.png)
 
 
 ## QUEM SEGUIR
