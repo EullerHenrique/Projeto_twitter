@@ -1,0 +1,79 @@
+<!--
+    //inscreverse = Arquivo que contém apenas as informações do projeto em questão, ou seja,
+    //arquivo utilizado para o programador que irá utilizar o framework inserir dados do
+    //seu projeto.
+
+    // "Arquivo do programador que utiliza o framework"
+
+    // Arquivo inscreverse = Requisito funcional
+
+    //Requisitos são solicitações, desejos, necessidades.
+    //Requisito funcional = Um requisito funcional é a aquele que descreve
+    // o que o sistema fará.
+
+
+    phtml = Extensão utilizada como padrão nas views das frameworks mvc para
+            indicar que um arquivo contém php e html
+-->
+
+<div class="container h-100">
+  <div class="d-flex justify-content-center align-items-center h-100">
+    <div class="card" style="width: 36rem; border-radius: 20px;"> <!-- REM DEFAULT (font size padrão do html) = 16px -->
+      <div class="card-body">
+
+           <div class="d-flex justify-content-center">
+             <a href="/">
+               <img src="IMG/twitter_logo.png" />
+             </a>
+           </div>
+
+            <h2 class="text-center">Crie sua conta</h2>
+
+            <form action="registrar" method="post">
+              <div class="form-group">
+                <input type="text" value="<?= $this->view->usuario['nome']?>"name="nome" class="form-control" style="border-radius: 20px;" placeholder="Nome" maxlength="99">
+              </div>
+              
+              <div class="form-group">
+                <input type="text" value="<?= $this->view->usuario['email']?>" name="email" class="form-control" style="border-radius: 20px;" placeholder="E-mail" maxlength="150">
+              </div>
+
+              <div class="form-group">
+                <input type="password" value="<?= $this->view->usuario['senha']?>" name="senha" class="form-control" style="border-radius: 20px;" placeholder="Senha" maxlength="255">
+              </div>
+              
+              <div class="mt-4 mb-4">
+                  <!-- small = Diminiu o tamanho do texto
+                       A tag simboliza elementos que normalmente seriam escritos
+                       em letra miúda fora da web,
+                       como avisos, regras, restrições legais, direitos de uso etc
+                  -->
+                <small class="form-text">
+                  Ao inscrever-se, você concorda com os Termos de Serviço e com as Políticas de Privacidade, incluindo o Uso de Cookies. Outras pessoas poderão encontrar você pelo e-mail ou número de telefone fornecido.
+                </small>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block" style="border-radius: 20px;">Inscrever-se</button>
+
+                <!-- inscreverse.phtml foi requisitado dentro da função content presente na classe Action, portanto,
+                    o atributo view da classe Action pode ser acessado dentro de  inscreverse.phtml
+                -->
+
+                <?php if($this->view->erroCadastro == "erro1"){?>
+                    <small class="form-text text-danger">Erro ao tentar realizar o cadastro, verifique se os campos foram preenchidos corretamente.</small>
+                <?php }?>
+
+                <?php if($this->view->erroCadastro == "erro2"){?>
+                    <small class="form-text text-danger">Erro a tentar realizar o cadastro, o nome e/ou o e-mail informado já está sendo usado, informe outro nome e/ou e-mail.</small>
+                <?php }?>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    
+  

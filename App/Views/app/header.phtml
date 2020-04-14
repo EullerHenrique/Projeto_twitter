@@ -1,0 +1,123 @@
+
+<script>
+    $(()=>{
+
+        // Script para permitir que o comportamento da tecla enter no input[type=file] presente no form
+        // seja enviar o formulário, e não abrir uma pasta para o arquivo ser selecionado
+        $('#file1').change(function () {
+            $('#form1').submit(); // O submit é realizado
+        });
+    });
+
+</script>
+
+
+<!-- O ::after permite modificar algo após o conteúdo do elemento selecionado.  -->
+<style>
+    .custom-file-label::after {
+        display: none;
+    }
+    #label1.custom-file-label{
+        background-color: #1DA1F2;
+    }
+    #label2.custom-file-label{
+        background-color: #E8F5FD;
+    }
+
+    #btn_remover_arquivo.btn-outline-dark:hover{
+        color: #000000;
+        background-color:#1DA1F2;
+    }
+
+</style>
+
+<nav class="navbar menu">
+
+    <a class="menuItem">
+
+    </a>
+
+    <a href="timeline">
+        <img class ="menuIco" src="IMG/twitter_logo.png">
+    </a>
+
+    <a class="menuItem" href="sair" style="margin-right: 0">
+        Sair
+    </a>
+
+</nav>
+
+<div class="container mt-3">
+    <div class="row">
+
+        <div class="col-xl-3 mb-4">
+
+            <div class="perfil">
+                <div class="perfilTopo">
+
+                    <?php if($this->view->info_usuario['nome_arquivo_usuario'] == ''|| !file_exists("IMG/".$this->view->info_usuario['nome_arquivo_usuario'])){ ?>
+
+                        <form id="form1" action="salvar_arquivo_do_perfil" method="post" enctype="multipart/form-data">
+
+                            <input id="file1" name="arquivo"  type="file" class="custom-file-input col-1" maxlength="255" style="margin-left: -10000px; ">
+                            <label id="label1" class= "ml-3 custom-file-label col-1 shadow-none border-0" for="file1" style="margin-top: -1000px;">
+                                <span class="fas fa-images" style="cursor: pointer; margin-top: 1006px;"></span>
+                            </label>
+                            <div class="text-center text-danger">
+                                <?php if($this->view->erro_arquivo_usuario == "1"){ ?>
+                                    <small>Erro: Extensão de arquivo não permitida.(Extensões permitidas: gif, png, jpg e jpeg)</small>
+                                <?php } else if($this->view->erro_arquivo_usuario == "2"){ ?>
+                                    <small>Erro: O arquivo enviado é muito grande, envie arquivos de até 2Mb.</small>
+                                <?php } else if($this->view->erro_arquivo_usuario == "3"){ ?>
+                                    <small>Erro: Erro ao realizar o upload.</small>
+                                <?php } else if($this->view->erro_arquivo_usuario == "4"){ ?>
+                                    <small>Escolha um arquivo.</small>
+                                <?php } ?>
+                            </div>
+                        </form>
+
+
+                    <?php }else if($this->view->info_usuario['nome_arquivo_usuario'] != '' && file_exists("IMG/".$this->view->info_usuario['nome_arquivo_usuario'])){?>
+                        <div class="d-flex justify-content-center">
+                            <img src="IMG/<?=$this->view->info_usuario['nome_arquivo_usuario']?>" style="height: 80px; width: 80px; border-radius: 40px; margin-top: 5px; margin-bottom:5px;">
+
+                            <form action="remover_arquivo_do_perfil" method="post">
+                                <button id="btn_remover_arquivo" type="submit" class="btn btn-sm btn-outline-dark" style="box-shadow: none; cursor:default; height: 0; width: 0; margin-left: -1000px;">
+                                    <div class="far fa-times-circle" style="cursor: pointer; color: black; margin-left: 990px;"></div>
+                                </button>
+                            </form>
+                        </div>
+
+                    <?php } ?>
+                </div>
+
+
+                <div class="perfilPainel">
+
+                    <div class="mt-2 mb-2 perfilPainelNome text-center" style="word-wrap: break-word"><?= $this->view->info_usuario['nome'] ?></div>
+
+                    <div class="row  mb-2">
+
+                        <div class="col text-center">
+                            <span class="perfilPainelItem">Tweets</span><br>
+                            <span class="perfilPainelItemValor"><?= $this->view->qtd_tweets_usuario['qtd_tweets'] ?></span>
+                        </div>
+
+                        <div class="col text-center">
+                            <span class="perfilPainelItem">Seguindo</span><br>
+                            <span class="perfilPainelItemValor"><?= $this->view->qtd_seguindo_usuario['qtd_seguindo'] ?></span>
+                        </div>
+
+                        <div class="col text-center">
+                            <span class="perfilPainelItem">Seguidores</span><br>
+                            <span class="perfilPainelItemValor"><?= $this->view->qtd_seguidores_usuario['qtd_seguidores'] ?></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+

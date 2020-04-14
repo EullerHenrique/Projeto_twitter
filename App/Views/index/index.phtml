@@ -1,0 +1,203 @@
+<!--
+    //index = Arquivo que contém apenas as informações do projeto em questão, ou seja,
+    //arquivo utilizado para o programador que irá utilizar o framework inserir dados do
+    //seu projeto.
+
+    // "Arquivo do programador que utiliza o framework"
+
+    // Arquivo index = Requisito funcional
+
+    //Requisitos são solicitações, desejos, necessidades.
+    //Requisito funcional = Um requisito funcional é a aquele que descreve
+    // o que o sistema fará.
+
+
+    phtml = Extensão utilizada como padrão nas views das frameworks mvc para
+            indicar que um arquivo contém php e html
+-->
+
+
+<div class="container-fluid h-100">
+    <!--
+        O bootstrap requer um elemento que possibilite envolver o conteúdo do site e adote o sistema de grid.
+        Use .container-fluid para conteúdo responsivo com largura fluída,
+        isto é, toda a largura da janela (esse container não possui margem).
+    -->
+
+    <div class="row h-100 align-items-center align-items-md-stretch justify-content-center">
+
+        <div class="col-md-6 banner d-none d-md-block">
+
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div>
+                    <div class="communicationItem">
+                        <span class="fas fa-search fa-2x"></span>
+                        Siga o que lhe interessa.
+                    </div>
+
+                    <div class="communicationItem">
+                        <span class="fas fa-user-friends fa-2x"></span>
+                        Saiba sobre o que as pessoas estão falando.
+                    </div>
+
+                    <div class="communicationItem">
+                        <span class="far fa-comment fa-2x"></span>
+                        Participe da conversa.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-6 mt-5 pl-5 pr-5 d-none d-md-block">
+
+            <form action="autenticar" method="post">
+                <div class="row mt-1">
+                    <div class="col">
+                        <input name="email" type="text" class="form-control" style="border-radius: 20px;" placeholder="E-mail">
+                    </div>
+                    <div class="col">
+                        <input name="senha" type="password" class="form-control" style="border-radius: 20px;" placeholder="Senha">
+                    </div>
+                    <div class="col-auto"><!-- col-auto -> A quantidade de colunas é determinada de acordo com a largura
+                                                               padrão do bloco, ou seja, o seu espaço padrão
+                                                               sem padding. Desta maneira, o bloco ficará apenas com o padding de 15px
+                                                               da classe col.
+                                               -->
+                        <button type="submit" class="btn btn-primary" style="border-radius: 20px;">Entrar</button>
+                    </div>
+                </div>
+
+                <?php if($this->view->login == 'erro'){ ?>
+
+                    <div class="row"> <!-- row = Adiciona uma margin de -15px -->
+                        <div class="col"> <!-- col = Adiciona um padding de 15px-->
+                            <small class="text-danger">O e-mail e a senha fornecidos não correspondem às informações em nossos registros.</small>
+                            <br>
+                            <small class="text-danger">Verifique-as e tente novamente.</small>
+                        </div>
+                    </div>
+
+                <?php } ?>
+
+                <?php if($this->view->login == 'erro2'){ ?>
+
+                    <div class="row"> <!-- row = Adiciona uma margin de -15px -->
+                        <div class="col"> <!-- col = Adiciona um padding de 15px-->
+                            <small class="text-danger">Por favor, faça login antes de acessar as páginas protegidas</small>
+                        </div>
+                    </div>
+
+                <?php } ?>
+
+            </form>
+
+            <div class="row mt-5 pl-0 pr-0 pl-sm-5 pr-sm-5 pl-md-4 pr-md-4 mb-5 d-none d-md-block"> <!-- Ao utilizar row as margens se acumulam hierarquicamente -->
+                <div class="mt-md-5">
+                    <div class="d-flex justify-content-center mb-md-4">
+                        <img src="IMG/twitter_logo.png"/>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <h1 class="title text-center">Veja o que está acontecendo no mundo agora</h1>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <h2 class="subtitle text-center">Participe hoje do Twitter.</h2>
+                    </div>
+
+                    <a href="inscreverse" class="btn btn-primary btn-block" style="border-radius: 20px;">Inscrever-se</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="row mt-5 pl-0 pr-0 pl-sm-5 pr-sm-5 d-block d-md-none"> <!-- Ao utilizar row as margens se acumulam hierarquicamente -->
+            <div class="d-flex justify-content-center">
+                <img src="IMG/twitter_logo.png"/>
+            </div>
+            <div class="d-flex justify-content-center">
+                <h1 class="col-10 title text-center">Veja o que está acontecendo no mundo agora</h1>
+            </div>
+            <div class="d-flex justify-content-center">
+                <h2 class="subtitle text-center">Participe hoje do Twitter.</h2>
+            </div>
+            <div class="pl-5 pr-5 d-block d-md-none">
+
+
+                <form action="autenticar" method="post">
+                    <input name="email" type="text" class="col-12 form-control mb-2" style="border-radius: 20px;" placeholder="E-mail">
+                    <input name="senha" type="password" class="col-12 form-control mb-2" style="border-radius: 20px;" placeholder="Senha">
+
+                    <?php if($this->view->login == 'erro'){ ?>
+
+                        <div class="row"> <!-- row = Adiciona uma margin de -15px -->
+                            <div class="col"> <!-- col = Adiciona um padding de 15px-->
+                                <small class="text-danger">O e-mail e a senha fornecidos não correspondem às informações em nossos registros.</small>
+                                <br>
+                                <small class="text-danger">Verifique-as e tente novamente.</small>
+                            </div>
+                        </div>
+
+                    <?php } ?>
+
+                    <?php if($this->view->login == 'erro2'){ ?>
+
+                        <div class="row"> <!-- row = Adiciona uma margin de -15px -->
+                            <div class="col"> <!-- col = Adiciona um padding de 15px-->
+                                <small class="text-danger">Por favor, faça login antes de acessar as páginas protegidas</small>
+                            </div>
+                        </div>
+
+                    <?php } ?>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="d-flex justify-content-start">
+                                <a href="inscreverse" class="mt-4 btn btn-primary" style="border-radius: 20px;">Inscrever-se</a>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex justify-content-end">
+                                <button type="submit" class="mt-4 btn btn-primary" style="border-radius: 20px;">Entrar</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>

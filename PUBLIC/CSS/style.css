@@ -1,0 +1,153 @@
+/* ALL*/
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* INDEX */
+
+.banner {
+    background-color: #1da1f2;
+}
+
+.communicationItem {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 40px;
+    margin: 48px;
+}
+
+.title {
+    color: #1da1f2;
+    font-size: 27px;
+    line-height: 40px;
+}
+
+.subtitle {
+    color: #14171a;
+    font-size: 18px;
+    line-height: 40px;
+    margin: 16px 0;
+}
+
+
+/* TIMELINE E QUEM_SEGUIR*/
+
+.menu {
+    height: 46px;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+
+.menuItem, .menuItem:hover {
+    font-size: 13px;
+    font-weight: bold;
+    color: #1DA1F2;
+    text-decoration: none;
+    margin-right: 25px;
+}
+
+.menuIco {
+    width: 31px;
+    height: 23px;
+}
+
+
+
+
+
+.perfil {
+    border: 1px solid #e6ecf0;
+    border-radius: 20px;
+}
+
+.perfilTopo {
+    height: 90px;
+    background-color: #1DA1F2;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.perfilPainel {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.perfilPainelNome {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.perfilPainelItem  {
+    color: #657786;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.perfilPainelItemValor {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 3px;
+    color: #1DA1F2;
+}
+
+.tweetBox {
+    height: 192px;
+    border: 1px solid #e6ecf0;
+    background-color: #E8F5FD;
+    padding-top:10px;
+    padding-bottom: 15px;
+    border-radius: 20px;
+}
+
+.tweet {
+    padding:15px;
+    border: 1px solid #e6ecf0;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.tweet:hover {
+    background-color: #f5f8fa;
+}
+
+.quemSeguir {
+    height: 192px;
+    border: 1px solid #e6ecf0;
+    background: #fff;
+    margin-bottom: 20px;
+    border-radius: 20px;
+
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.quemSeguirTitulo {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.quemSeguirTxt, .quemSeguirTxt:hover {
+    color: #1DA1F2;
+    text-decoration: none;
+    font-size: 12px;
+    margin-top: 40px;
+}

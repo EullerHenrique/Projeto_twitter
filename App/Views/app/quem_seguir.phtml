@@ -1,0 +1,78 @@
+<!--
+    //Views/app/quemSeguir = Arquivo que contém apenas as informações do projeto em questão, ou seja,
+    //arquivo utilizado para o programador que irá utilizar o framework inserir dados do
+    //seu projeto.
+
+    // "Arquivo do programador que utiliza o framework"
+
+    // Arquivo quemSeguir = Requisito funcional
+
+    //Requisitos são solicitações, desejos, necessidades.
+    //Requisito funcional = Um requisito funcional é a aquele que descreve
+    // o que o sistema fará.
+
+
+    phtml = Extensão utilizada como padrão nas views das frameworks mvc para
+            indicar que um arquivo contém php e html
+-->
+
+
+        <!-- Header -->
+        <?php require_once "header.phtml"?>
+
+
+		<div class="col-xl-9">
+			
+			<div class="mb-3">
+					<div class="card pt-1 pb-1" style="border-radius: 20px;">
+						<div class="card-body">
+							<form id="form" action="pesquisar" method="get">
+								<div class="input-group">
+									<input name="pesquisar" type="text" class="form-control" style="border-top-left-radius: 20px; border-bottom-left-radius: 20px;" placeholder="Quem você está procurando?" maxlength="100">
+									<div class="input-group-append">
+										<button class="btn btn-primary" type="submit" style="border-top-right-radius: 20px; border-bottom-right-radius: 20px;">Procurar</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+			</div>
+
+
+            <?php foreach ($this->view->usuarios as $indice => $usuario){?>
+                <div class="mb-2">
+                        <div class="card" style="border-radius: 20px;">
+                            <div class="card-body">
+                                <div class="row ml-1">
+                                        <div class="col-10 pr-0" style="margin-top: -2px; margin-left: -19px;">
+                                                <?= $usuario['nome']; ?>
+                                        </div>
+                                        <div class="col-2 d-flex justify-content-end pr-0">
+                                                  <?php if($usuario['seguido_s_1_n_0'] == 0){?>
+                                                    <a href="acao?acao=seguir&id_usuario_seguido=<?=$usuario['id']?>"
+                                                       class="btn btn-primary" style="border-radius: 20px; height: 38px;">Seguir
+                                                    </a>
+                                                  <?php } ?>
+
+                                                  <?php if($usuario['seguido_s_1_n_0'] == 1){?>
+                                                    <a href="acao?acao=deixar_de_seguir&id_usuario_seguido=<?=$usuario['id']?>"
+                                                       class="btn btn-primary" style="border-radius: 20px; height: 38px;">Seguindo
+                                                    </a>
+                                                  <?php } ?>
+                                        </div>
+                                    </div>
+                                <div class="row">
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <?php if($usuario['nome_arquivo_usuario'] != '' && file_exists("IMG/".$usuario['nome_arquivo_usuario'])){ ?>
+                                            <img src="IMG/<?=$usuario['nome_arquivo_usuario']?>" style="height: 120px; width: 120px; border-radius: 60px;">
+                                        <?php } ?>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+            <?php } ?>
+        </div>
+	</div>
+</div>

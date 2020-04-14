@@ -1,0 +1,136 @@
+<!--
+    //Views/app/timeline = Arquivo que contém apenas as informações do projeto em questão, ou seja,
+    //arquivo utilizado para o programador que irá utilizar o framework inserir dados do
+    //seu projeto.
+
+    // "Arquivo do programador que utiliza o framework"
+
+    // Arquivo timeline = Requisito funcional
+
+    //Requisitos são solicitações, desejos, necessidades.
+    //Requisito funcional = Um requisito funcional é a aquele que descreve
+    // o que o sistema fará.
+
+
+    phtml = Extensão utilizada como padrão nas views das frameworks mvc para
+            indicar que um arquivo contém php e html
+-->
+
+<script type="text/javascript" src="JS/script.js"></script>
+
+<style>
+    #btn_remover_tweet.btn-outline-dark:hover{
+        color: #000000;
+        background-color:#f5f8fa;
+    }
+</style>
+
+<!-- Header -->
+<?php require_once "header.phtml"?>
+
+
+
+
+        <div class="col-xl-6">
+
+            <div class="mb-2">
+                <div class="col tweetBox">
+
+                    <form id="form2" method="post" action="tweet" enctype="multipart/form-data">
+                        <textarea id="tweet" name="tweet" class="form-control mb-2" id="tweet" placeholder="O que está acontecendo?" maxlength="280" rows="3" style="resize: none; border-radius: 20px;"></textarea>
+
+                        <div class="row">
+                            <div class="col-1">
+                                <input id="file2" name="arquivo"  type="file" class="custom-file-input " maxlength="255" style="margin-left: -1000px;">
+                                <label id="label2" class="ml-1 custom-file-label  shadow-none border-0" for="file2" style="margin-top: -1000px;">
+                                    <span class="fas fa-images" style="cursor: pointer; margin-top: 1035px; margin-left: 12px;"></span>
+                                </label>
+                            </div>
+                            <div class="col d-flex justify-content-end" style="margin-top: 20px;">
+                                <button id="btn" type="submit" class="btn btn-primary" style="border-radius: 20px;">Tweetar</button>
+                            </div>
+                        </div>
+
+
+                        <div style="margin-left:12px; margin-top: -60px;">
+                            <div class="mt-3">
+                                <span id="cont">0</span>
+                                <span>/ 280</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-left: 80px; margin-top: -38px;">
+                            <div class="mb-2 mb-sm-0">
+                                    <img id="img" src="" style="border-radius: 40px;">
+                            </div>
+                        </div>
+
+                    </form>
+
+
+                </div>
+            </div>
+
+
+            <?php foreach ($this->view->tweets as $id_tweet => $tweet){?>
+                <div class="tweet" style="min-height: 80px;">
+
+                    <div class="col">
+                        <!--
+
+                            A quebra de linha ocorre apenas quando há uma quebra de palavra.
+
+                            Se você tem uma "palavra" que é longa, então não há lugar para que ela se quebre.
+
+                            Solução: word-wrap: break-word -> Quebra palavras no meio, se necessário.
+
+                        -->
+
+                        <p style="word-wrap: break-word;"><strong><?= $tweet['nome']?></strong> <small class="text text-muted"> <?= $tweet['data'] ?> </small></p>
+
+                        <?php if($tweet['id_usuario'] == $_SESSION['id']){?>
+                            <form action="remover_tweet" method="get" style = "margin-top: -45px;">
+
+                                <div class="d-flex justify-content-end">
+                                    <button id="btn_remover_tweet" type="submit" name="id" value="<?= $tweet['id']?>" class="btn btn-sm btn-outline-dark" style="box-shadow:none; border: none; height: 1px; width: 1px; cursor:default;">
+                                        <div class="far fa-times-circle" style="margin-left: -5px;cursor: pointer;"></div>
+                                    </button>
+                                </div>
+                            </form>
+
+                            <div style="margin-top: 37px;">
+                                     <p style="word-wrap: break-word;"><?= nl2br($tweet['tweet']) ?></p> <!-- nl2br = Insere quebras de linha onde novas linhas (\n) ocorrem na string -->
+
+                                <?php if($tweet['nome_arquivo_tweet'] != '' && file_exists("IMG/".$tweet['nome_arquivo_tweet'])){?>
+                                    <img class="mb-4" src="IMG/<?= $tweet['nome_arquivo_tweet']?>" width="100%"  style="border-radius: 5px;">
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+
+                        <?php if($tweet['id_usuario'] != $_SESSION['id']){?>
+                                <p style="word-wrap: break-word;"><?= nl2br($tweet['tweet']) ?></p> <!-- nl2br = Insere quebras de linha onde novas linhas (\n) ocorrem na string -->
+
+                                <?php if($tweet['nome_arquivo_tweet'] != '' && file_exists("IMG/".$tweet['nome_arquivo_tweet'])){?>
+                                    <img class="mb-4" src="IMG/<?= $tweet['nome_arquivo_tweet']?>" width="100%"  style="border-radius: 5px;">
+                                <?php } ?>
+                        <?php } ?>
+
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+
+        <div class="col-xl-3 mt-2 mt-xl-0 ">
+            <div class="quemSeguir text-center">
+                <div class="quemSeguirTitulo">Quem seguir</div>
+                <hr>
+                <div class="quemSeguirTxt">
+                    <a href="quem_seguir">Procurar por pessoas conhecidas</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

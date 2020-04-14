@@ -1,0 +1,19 @@
+{
+  "name": "miniframework",
+  "require":{
+    "php": ">= 7.0"
+  },
+  "authors": [
+    {
+      "name": "Euller Henrique Bandeira Oliveira",
+      "email": "eullerhenrique@outlook.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "App/",
+      "MF\\": "vendor/MF/"
+    }
+  }
+
+}
