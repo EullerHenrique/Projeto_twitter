@@ -7,7 +7,7 @@
 ##### O foco desse projeto foi aplicar conhecimentos adquiridos ao longo do curso relacionados a HTML, CSS, BOOTSTRAP 4, JAVASCRIPT, JQUERY, PHP, PHP COM ORIENTAÇÃO A OBJETOS, MYSQL, ARQUITETURA MVC E COMPOSER.
 
 ## LOGIN
-![screencapture-the-twitter-rf-gd-2020-04-14-04_14_11](https://user-images.githubusercontent.com/48317736/79196423-753c2180-7e06-11ea-9fd8-ca1d013da5c2.png)
+![screencapture-the-twitter-rf-gd-2020-04-15-01_36_07](https://user-images.githubusercontent.com/48317736/79299103-8eea7100-7eb9-11ea-9e49-7a8b91d4ad97.png)
 
 
 ## INSCRIÇÃO
