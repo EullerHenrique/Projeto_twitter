@@ -35,4 +35,4 @@
 ######  6 - Em seu navegador, digite localhost:8080
    
 ######  8080 = Porta desejada
-######  Obs: Qualquer porta que não esteja sendo utilizada pode ser usada.
+
