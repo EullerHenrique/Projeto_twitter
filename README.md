@@ -26,7 +26,7 @@
 ![screencapture-the-twitter-rf-gd-quem-seguir-2020-04-14-01_18_52](https://user-images.githubusercontent.com/48317736/79185880-837e4380-7dee-11ea-9406-b1099b7688e4.png)
 
 ##### Instruções para executar o projeto:
-######  1 - Clone o repositório
+######  1 - Baixe o repositório
 ######  2 - Abra o terminal e vá até a pasta PUBLIC
 ######  3 - No terminal, utilize o servidor embutido do php por meio do seguinte comando: 
 ######      php -S localhost:8080 
@@ -34,5 +34,5 @@
 ######  5 - Crie as tabelas usuarios, tweets e usuarios_seguidores
 ######  6 - Em seu navegador, digite localhost:8080
    
-######  8080 = Porta desejada
+######  8080 = Porta padrão
 
