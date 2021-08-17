@@ -1,7 +1,10 @@
 ## Projeto Twitter: 
 
 ##### Esse projeto foi desenvolvido com base no projeto Twitter Clone do curso [Desenvolvimento Web Completo](https://www.udemy.com/course/web-completo/). 
+##### Obs: Diversas alterações no front-end e no back-end foram realizadas.
+
 ##### O foco desse projeto foi aplicar conhecimentos adquiridos ao longo do curso relacionados a HTML, CSS, BOOTSTRAP 4, JAVASCRIPT, JQUERY, PHP, PHP COM ORIENTAÇÃO A OBJETOS, MYSQL, ARQUITETURA MVC E COMPOSER.
+
 
 ## LOGIN
 ![screencapture-the-twitter-rf-gd-2020-04-15-01_37_06](https://user-images.githubusercontent.com/48317736/79299127-a1fd4100-7eb9-11ea-9c04-6c9d3afaa2fd.png)
